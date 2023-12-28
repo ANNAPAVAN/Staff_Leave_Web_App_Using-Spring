@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd"
+>
+
+	<!-- Jdbc Configurations -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>	
+		<property name="url" value="jdbc:mysql://localhost:3306/db"/>	
+		<property name="username" value="root"/>	
+		<property name="password" value="Mysql134"/>	
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<!-- DAO Configuration -->
+	<bean id="facultyDao" class="com.pavan.dao.FacultyDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
+
+
+
+	<bean name="/homepage" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="home"/>
+	</bean>
+	
+	<bean name="/loginpage" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="loginpage"/>
+	</bean>
+	
+	<bean name="/registerpage" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="registerpage"/>
+	</bean>
+	
+	<bean name="/register" class="com.pavan.controllers.RegistrationFormController"/>
+   <bean name="/login" class="com.pavan.controllers.LoginFormController"/> 	
+   <bean name="/fnote" class="com.pavan.controllers.FacultyNoteController"/>
+   <bean name="/bymanager" class="com.pavan.controllers.ManagerController"/>
+    <bean name="/bydirector" class="com.pavan.controllers.DirectorController"/>
+	
+	<bean name="/status" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+		<property name="viewName" value="status"/>
+	</bean>
+	
+	<bean name="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
+	<bean name="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+</beans>
