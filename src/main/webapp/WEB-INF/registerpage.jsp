@@ -55,8 +55,11 @@
     </style>
 </head>
 <body>
+<jsp:include page="/WEB-INF/navbar.jsp"/>
     <div class="container">
-        <h1>Registration Form</h1>
+        <div class="c1">
+	    	<h1 style="color: red; text-align: center;">REGISTRATION PAGE</h1>
+	    </div>
         <form method="POST" action="register">
             <table>
                 <tr>
@@ -77,7 +80,7 @@
                 </tr>
                 <tr>
                     <td><label for="role">Role</label></td>
-                    <td><input type="text" name="role" id="role" /></td>
+                    <td><input type="text" name="role" id="role" placeholder="teacher"/></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="Register" /></td>

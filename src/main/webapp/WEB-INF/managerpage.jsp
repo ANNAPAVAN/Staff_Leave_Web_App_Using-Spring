@@ -63,8 +63,12 @@
     </style>
 </head>
 <body>
+<jsp:include page="/WEB-INF/navin.jsp"/>
+	
     <div class="container">
-        <h1>Requests From Faculty</h1>
+        <div class="c1">
+	    	<h1 style="color: red; text-align: center;">MANAGER PAGE</h1>
+	    </div>
         <table>
             <thead>
                 <tr>

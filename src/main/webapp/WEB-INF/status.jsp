@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/navbar.jsp"/>
+
 <h1 style="color:red" align="center">${message}</h1>
 </body>
 </html>

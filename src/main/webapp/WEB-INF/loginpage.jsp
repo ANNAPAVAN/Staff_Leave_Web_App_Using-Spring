@@ -54,8 +54,12 @@
     </style>
 </head>
 <body>
+<jsp:include page="/WEB-INF/navbar.jsp"/>
+		
     <div class="container">
-        <h1>Login Form</h1>
+        <div class="c1">
+	    	<h1 style="color: red; text-align: center;">LOGIN PAGE</h1>
+	    </div>
         <form method="POST" action="login">
             <table>
                 <tr>
@@ -72,7 +76,7 @@
                 </tr>
                 <tr>
                     <td><label for="role">Role</label></td>
-                    <td><input type="text" name="role" id="role" /></td>
+                    <td><input type="text" name="role" id="role" placeholder="teacher/manager/director"/></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="Login" /></td>

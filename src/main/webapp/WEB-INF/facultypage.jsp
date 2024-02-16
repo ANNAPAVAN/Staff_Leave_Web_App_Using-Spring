@@ -54,10 +54,14 @@
     </style>
 </head>
 <body>
+<jsp:include page="/WEB-INF/navin.jsp"/>
+	
     <div class="container">
         <h1 style="color: red;" align="center">Welcome Faculty: ${lst.get(0)}</h1>
         <h2 style="color: green;" align="center">Status: ${lst.get(1)}</h2>
-        <h1 align="center">Permission Form</h1>
+        <div class="c1">
+	    	<h1 style="color: red; text-align: center;">Permission Form</h1>
+	    </div>
         <form method="POST" action="fnote">
             <table>
                 <tr>
